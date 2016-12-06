@@ -46,7 +46,8 @@ class Generic {
 				$this->wrappers[self::LABEL]['type'] = self::DEFAULT_WRAPPER;
 				$this->wrappers[self::ERRORS]['type'] = self::DEFAULT_WRAPPER;
 			}
-			$type->attributes = $attributes;
+			$this->attributes = $attributes;
+			//var_dump($this->attributes);
 		}
 		$this->attributes['id'] = $name;
 	}
@@ -81,11 +82,13 @@ class Generic {
 				} elseif ($key == 'href') {
 					$value = urlencode($value);	
 				} 
-				$attribs = $key . '="' . $value .'" ';
+				$attribs .= $key . '="' . $value .'" ';
 			} else {
+				//var_dump($key . ' ' . $value);
 				$attribs .= $key . ' ';
 			}
 		}
+		//var_dump($attribs);
 		return trim($attribs);
 	}
 	
