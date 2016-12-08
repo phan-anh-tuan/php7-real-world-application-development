@@ -45,7 +45,7 @@ class AbstractHttp {
 	public function setUri($uri, array $params = NULL)
 	{
 		$this->uri = $uri;
-		$first = TRUE;
+		//$first = TRUE;
 		if ($params) {
 			$this->uri .= '?' . http_build_query($params);
 		}
